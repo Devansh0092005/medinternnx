@@ -8,6 +8,22 @@ const coursesFallback=[
 ];
 
 let sb=null,user=null,courses=[],enrollments=[],progress=[];
+function courseContent(courseName){
+  return (window.MEDINTERNX_CONTENT && window.MEDINTERNX_CONTENT[courseName]) || [];
+}
+function moduleTitle(courseName,index,course){
+  const content=courseContent(courseName)[index];
+  if(content) return content.title;
+  const mods=Array.isArray(course.modules)?course.modules:JSON.parse(course.modules||"[]");
+  return typeof mods[index]==="object" ? (mods[index].title||`Module ${index+1}`) : mods[index];
+}
+function moduleContent(courseName,index,course){
+  const content=courseContent(courseName)[index];
+  if(content) return content;
+  const mods=Array.isArray(course.modules)?course.modules:JSON.parse(course.modules||"[]");
+  const raw=mods[index];
+  return {title: typeof raw==="object" ? (raw.title||`Module ${index+1}`) : raw, lesson:"Learning content for this module will be updated soon.", objectives:[], activity:"Review the module topic and complete the practical task.", quiz:"Knowledge check: What is the main purpose of this module?"};
+}
 function configured(){return window.MEDINTERNX_SUPABASE_URL && !window.MEDINTERNX_SUPABASE_URL.includes("YOUR_") && window.MEDINTERNX_SUPABASE_KEY && !window.MEDINTERNX_SUPABASE_KEY.includes("YOUR_")}
 async function init(){
  if(!configured()){courses=coursesFallback;renderCourses();setMsg("loginMsg","Add your Supabase values in config.js to enable real accounts.","#b26a00");return}
@@ -34,9 +50,16 @@ function renderCourses(){
 }
 async function openCourse(id){
  const c=courses.find(x=>Number(x.id)===Number(id)); if(!c)return;
- const modules=Array.isArray(c.modules)?c.modules:JSON.parse(c.modules||"[]");
- document.getElementById("courseDetails").innerHTML=`<span class="eyebrow">FREE INTERNSHIP</span><h2>${c.icon} ${c.name}</h2><p>${c.description}</p><div class="detail-grid"><div><b>Duration</b>${c.duration}</div><div><b>Level</b>${c.level}</div><div><b>Topics</b>${(c.topics||[]).join(", ")}</div><div><b>Modules</b>${modules.length}</div></div><h3>Learning modules</h3>${modules.map((m,i)=>`<div class="module-box">${i+1}. ${m}</div>`).join("")}<br><button class="btn btn-lg" onclick="enroll(${c.id})">${user?'Enroll / unlock course':'Register to unlock'}</button>`;
+ const mods=Array.isArray(c.modules)?c.modules:JSON.parse(c.modules||"[]");
+ const content=courseContent(c.name);
+ document.getElementById("courseDetails").innerHTML=`<span class="eyebrow">FREE INTERNSHIP</span><h2>${c.icon} ${c.name}</h2><p>${c.description}</p><div class="detail-grid"><div><b>Duration</b>${c.duration}</div><div><b>Level</b>${c.level}</div><div><b>Topics</b>${(c.topics||[]).join(", ")}</div><div><b>Modules</b>${mods.length}</div></div><h3>Learning modules</h3>${mods.map((m,i)=>`<div class="module-box module-link"><span><b>${i+1}. ${moduleTitle(c.name,i,c)}</b><small>${content[i]?.lesson||"Open this module to study the lesson and practical task."}</small></span><button class="btn btn-outline" onclick="openLesson(${c.id},${i})">Learn</button></div>`).join("")}<br><button class="btn btn-lg" onclick="enroll(${c.id})">${user?'Enroll / unlock course':'Register to unlock'}</button>`;
  openModal("courseModal");
+}
+function openLesson(courseId,index){
+ const c=courses.find(x=>Number(x.id)===Number(courseId)); if(!c)return;
+ const m=moduleContent(c.name,index,c);
+ document.getElementById("lessonDetails").innerHTML=`<span class="eyebrow">${c.icon} ${c.name}</span><h2>Module ${index+1}: ${m.title}</h2><div class="lesson-section"><h3>📖 Lesson</h3><p>${m.lesson}</p></div><div class="lesson-section"><h3>🎯 Learning objectives</h3><ul>${(m.objectives||[]).map(x=>`<li>${x}</li>`).join("")}</ul></div><div class="lesson-section"><h3>💡 Practical task</h3><p>${m.activity}</p></div><div class="lesson-section quiz"><h3>📝 Knowledge check</h3><p>${m.quiz}</p></div><button class="btn" onclick="closeModal('lessonModal');${user?`openCourse(${c.id})`:`openAuth('register')`}">Back to course</button>`;
+ closeModal("courseModal"); openModal("lessonModal");
 }
 async function enroll(courseId){
  if(!user){closeModal("courseModal");openAuth("register");return}
@@ -58,7 +81,7 @@ async function loadDashboard(){
  document.getElementById("dashboardContent").innerHTML=enrollments.map(e=>{
    const c=e.courses; const mods=Array.isArray(c.modules)?c.modules:JSON.parse(c.modules||"[]");
    const done=progress.filter(p=>p.enrollment_id===e.id&&p.completed).length; const pct=Math.round(done/mods.length*100);
-   return `<div class="enroll"><div class="dash-top"><div><h3>${c.icon} ${c.name}</h3><p>${c.duration} • ${done}/${mods.length} modules complete</p></div><b>${pct}%</b></div><div class="progress"><div class="bar" style="width:${pct}%"></div></div>${mods.map((m,i)=>{const ok=progress.some(p=>p.enrollment_id===e.id&&p.module_index===i&&p.completed);return `<div class="module-row"><span>${i+1}. ${m}</span><button class="${ok?'btn btn-outline':'btn'}" onclick="toggleModule(${e.id},${i},${ok})">${ok?'✓ Completed':'Mark complete'}</button></div>`}).join("")}${pct===100?`<div class="success"><h3>🎉 Internship completed!</h3><p>Your certificate options are now unlocked. The e-certificate fee is shown only at this stage.</p><button class="btn" onclick="certificateInfo()">View certificate options</button></div>`:""}</div><hr>`;
+   return `<div class="enroll"><div class="dash-top"><div><h3>${c.icon} ${c.name}</h3><p>${c.duration} • ${done}/${mods.length} modules complete</p></div><b>${pct}%</b></div><div class="progress"><div class="bar" style="width:${pct}%"></div></div>${mods.map((m,i)=>{const ok=progress.some(p=>p.enrollment_id===e.id&&p.module_index===i&&p.completed);return `<div class="module-row"><span><b>${i+1}. ${moduleTitle(c.name,i,c)}</b><small>${ok?'Completed':'Study the lesson before marking complete'}</small></span><div class="module-actions"><button class="btn btn-outline" onclick="openLesson(${c.id},${i})">Learn</button><button class="${ok?'btn btn-outline':'btn'}" onclick="toggleModule(${e.id},${i},${ok})">${ok?'✓ Completed':'Mark complete'}</button></div></div>`}).join("")}${pct===100?`<div class="success"><h3>🎉 Internship completed!</h3><p>Your certificate options are now unlocked. The e-certificate fee is shown only at this stage.</p><button class="btn" onclick="certificateInfo()">View certificate options</button></div>`:""}</div><hr>`;
  }).join("");
 }
 async function toggleModule(enrollmentId,index,currently){

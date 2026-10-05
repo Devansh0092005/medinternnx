@@ -1,0 +1,224 @@
+window.MEDINTERNX_CONTENT = {
+  "Pharmacovigilance": [
+    {
+      "title": "PV Fundamentals",
+      "lesson": "Pharmacovigilance (PV) is the ongoing science of detecting, assessing, understanding and preventing medicine-related safety problems. Monitoring continues after approval because real-world patients may differ from clinical-trial populations. Important information sources include spontaneous reports, clinical studies, literature, safety databases and patient programs. A safety report is evidence to assess—not automatic proof that a product caused an event.",
+      "objectives": "Define PV; identify major safety-information sources; explain why post-marketing monitoring matters.",
+      "activity": "Create a one-page map of five PV information sources and one strength of each.",
+      "quiz": "Which statement is correct? A report automatically proves causality; B safety monitoring stops at approval; C a safety report is assessed as evidence; D only regulators can report. | Answer: C"
+    },
+    {
+      "title": "Adverse Drug Reactions",
+      "lesson": "An adverse event is an unwanted medical occurrence after exposure to a product, while an adverse drug reaction implies a suspected causal relationship. Case information should be clear enough to identify a patient, reporter, suspect product and event. Seriousness describes regulatory outcome criteria; severity describes intensity. These concepts should not be confused when reviewing a case.",
+      "objectives": "Differentiate AE and ADR; recognize minimum case information; distinguish seriousness from severity.",
+      "activity": "Write a fictional case using a fake patient, product, event and reporter. Do not use real personal data.",
+      "quiz": "Seriousness and severity are: A identical; B different concepts; C never recorded; D interchangeable. | Answer: B"
+    },
+    {
+      "title": "Case Processing Workflow",
+      "lesson": "A basic safety-case workflow moves from receipt and triage through validation, data entry, medical review, follow-up, duplicate checking, quality control and reporting when required. Controlled procedures help teams perform these steps consistently. Accurate dates, product details, event terms and source documentation are especially important because errors can affect patient-safety decisions.",
+      "objectives": "Describe the case lifecycle; explain duplicate detection; identify key quality checks.",
+      "activity": "Draw a seven-step case-processing flow and add one quality risk at each step.",
+      "quiz": "Why are duplicates important? A they can distort case counts and signals; B they improve data automatically; C they are ignored; D they replace follow-up. | Answer: A"
+    },
+    {
+      "title": "Signal Detection",
+      "lesson": "A safety signal is information suggesting a new or changed causal association that deserves further investigation. Signals may come from individual cases, case series, literature, clinical studies or statistical analyses. Detection is not confirmation. Analysts review case quality, alternative explanations, consistency, biological plausibility and other evidence before making conclusions.",
+      "objectives": "Define a safety signal; distinguish detection from confirmation; list evidence used in assessment.",
+      "activity": "Imagine five similar reports. Write three questions you would ask before concluding there is a confirmed safety problem.",
+      "quiz": "A detected signal means: A causality is proven; B further investigation may be warranted; C withdrawal is always required; D the event is definitely new. | Answer: B"
+    },
+    {
+      "title": "Safety Reporting & Compliance",
+      "lesson": "PV activities are governed by regulations, guidance and controlled organizational procedures. Timelines, traceable records, audit trails and quality checks support compliant reporting. Privacy also matters: use only necessary information and protect personal data. Real-world reporting requirements vary by jurisdiction and product, so professionals should use current official guidance and their organization's approved procedures.",
+      "objectives": "Explain why reporting timelines matter; identify the role of SOPs; recognize privacy controls.",
+      "activity": "Create a five-item compliance checklist for a safety-reporting team.",
+      "quiz": "Which practice best supports compliance? A undocumented changes; B controlled procedures and traceable records; C sharing patient data widely; D ignoring timelines. | Answer: B"
+    }
+  ],
+  "Clinical Research": [
+    {
+      "title": "Clinical Research Fundamentals",
+      "lesson": "Clinical research generates evidence about medicines, devices, diagnostics, procedures or other health interventions. A study normally has a research question, protocol, participants and investigators, plus sponsor, ethics and regulatory oversight as appropriate. A strong study balances scientific validity with participant rights, safety, privacy and data quality.",
+      "objectives": "Explain why clinical research is performed; identify major stakeholders; describe the role of a protocol.",
+      "activity": "Choose a fictional medicine and write one research question that could be tested ethically.",
+      "quiz": "The protocol primarily describes: A the study plan and methods; B a marketing slogan; C a patient invoice; D a cafeteria menu. | Answer: A"
+    },
+    {
+      "title": "Clinical Trial Phases",
+      "lesson": "Early studies commonly focus on safety, tolerability and pharmacokinetics. Later studies explore efficacy and dose and then provide larger comparative evidence for benefit-risk evaluation. Post-approval research and surveillance can address longer-term safety, effectiveness and special populations. Exact designs vary by intervention and jurisdiction, so phase labels are useful guides rather than rigid formulas.",
+      "objectives": "Describe the broad purpose of Phases I–III; explain why objectives change; recognize post-approval research.",
+      "activity": "Make a four-row table showing the main question for Phase I, II, III and post-approval studies.",
+      "quiz": "Which phase generally provides larger confirmatory evidence before approval? A I; B II; C III; D none. | Answer: C"
+    },
+    {
+      "title": "GCP, Ethics & Informed Consent",
+      "lesson": "Good Clinical Practice is a quality and ethical framework for clinical studies. Participants should receive understandable information and make a voluntary decision. Ethics committees review participant protections, investigators follow the approved protocol and deviations are documented. Data should be accurate, traceable and secure. GCP therefore supports both participant protection and credible evidence.",
+      "objectives": "Explain informed consent; describe ethics review; explain protocol compliance and data integrity.",
+      "activity": "Write five questions a participant should be able to answer before deciding whether to join a study.",
+      "quiz": "Informed consent should be: A forced; B voluntary and based on understandable information; C completed after the study; D unnecessary. | Answer: B"
+    },
+    {
+      "title": "Study Documents",
+      "lesson": "Clinical studies use controlled documents such as protocols, informed-consent forms, investigator materials, case-report forms, monitoring records and essential records. Version control helps ensure that staff use the correct approved materials. Good document management provides evidence that study activities were planned, authorized and performed appropriately.",
+      "objectives": "Identify common study documents; explain essential records; understand version control.",
+      "activity": "Match protocol, consent form and case-report form to their main purposes.",
+      "quiz": "Why is version control important? A it makes documents longer; B it helps staff use the correct approved version; C it removes training; D it prevents every error. | Answer: B"
+    },
+    {
+      "title": "Safety & Clinical Data Basics",
+      "lesson": "Clinical data can originate from medical records, participant reports, laboratories, electronic systems and other sources. Data-management checks identify missing, inconsistent or implausible values. Safety events require appropriate assessment and reporting according to the protocol and applicable requirements. Access controls and confidentiality help protect participants.",
+      "objectives": "Explain source data and entered study data; describe data queries; recognize safety and privacy controls.",
+      "activity": "Create three data-quality checks for a fictional blood-pressure dataset.",
+      "quiz": "A data query is generally used to: A hide errors; B clarify or resolve a data issue; C approve a drug; D replace consent. | Answer: B"
+    }
+  ],
+  "Medical Writing": [
+    {
+      "title": "Medical Writing Basics",
+      "lesson": "Medical writing turns scientific or clinical information into clear documents for a defined audience. Examples include manuscripts, study summaries, educational materials, reports and regulatory documents. Strong writing starts with purpose and audience, uses precise language and separates evidence from interpretation. Accuracy matters more than impressive wording.",
+      "objectives": "Identify common medical-writing outputs; match tone to audience; use accurate evidence-aware language.",
+      "activity": "Rewrite one technical sentence into plain language for a patient without changing its meaning.",
+      "quiz": "A good medical writer should prioritize: A ambiguity; B accuracy and clarity; C maximum jargon; D unsupported claims. | Answer: B"
+    },
+    {
+      "title": "Literature Review",
+      "lesson": "A literature review is a structured process of finding, screening and synthesizing relevant evidence. Start with a focused question, define keywords, search credible databases, screen results, extract useful information and record citations. A good review compares evidence and limitations rather than copying abstracts. Keeping a search log improves transparency and repeatability.",
+      "objectives": "Define a focused search question; describe search and screening; distinguish synthesis from copying.",
+      "activity": "Build five search keywords for a fictional question about medication adherence.",
+      "quiz": "A literature review should mainly: A copy abstracts; B synthesize relevant evidence; C use one source; D ignore limitations. | Answer: B"
+    },
+    {
+      "title": "Scientific Structure & Abstracts",
+      "lesson": "Many research papers use an IMRaD-style structure: Introduction, Methods, Results and Discussion. The introduction frames the question, methods explain how it was studied, results report findings and discussion interprets them. An abstract compresses the essential objective, approach, key findings and conclusion. It should not make claims unsupported by the underlying work.",
+      "objectives": "Explain the main scientific sections; identify abstract components; write concise evidence-based summaries.",
+      "activity": "Write a four-sentence fictional abstract: objective, methods, result and conclusion.",
+      "quiz": "Which section primarily explains how a study was conducted? A Methods; B Discussion; C Title; D References. | Answer: A"
+    },
+    {
+      "title": "Referencing & Evidence",
+      "lesson": "Citations allow readers to verify claims and give credit to original work. Paraphrasing means expressing an idea in your own words while still citing the source. Changing only a few words is not enough. Direct quotations should be limited and clearly marked. Reference styles differ, so writers should follow the style requested by a journal, institution or assignment.",
+      "objectives": "Explain why citations matter; distinguish paraphrasing from copying; create a consistent reference list.",
+      "activity": "Take one source and write a cited paraphrase in your own words.",
+      "quiz": "Paraphrasing without citation is acceptable because the words changed. A True; B False. | Answer: B"
+    },
+    {
+      "title": "Healthcare Communication",
+      "lesson": "Healthcare communication should be accurate, understandable and appropriate for the audience. Patient materials usually benefit from plain language and explanations of unfamiliar terms. Professional materials can use technical vocabulary but should remain organized. Educational content should not be presented as individualized diagnosis or treatment advice. High-stakes content should be reviewed against current authoritative sources.",
+      "objectives": "Adapt language to patients and professionals; use clear structure; distinguish education from individualized advice.",
+      "activity": "Write a 100-word patient education note about completing a prescribed medicine course, without giving individualized treatment advice.",
+      "quiz": "For a patient audience, the best style is usually: A clear and understandable; B confusing; C unsupported; D full of abbreviations. | Answer: A"
+    }
+  ],
+  "Regulatory Affairs": [
+    {
+      "title": "Regulatory Fundamentals",
+      "lesson": "Regulatory affairs connects scientific development with applicable laws, regulations and health-authority expectations. Teams may support development strategy, submissions, labeling, authority questions, variations and post-market obligations. Requirements differ by country, product type and development stage, so professionals should use current official guidance rather than relying on memory.",
+      "objectives": "Explain the role of regulatory affairs; identify lifecycle stages; recognize jurisdictional differences.",
+      "activity": "Draw a product lifecycle from development to post-market activities and label the regulatory touchpoints.",
+      "quiz": "Regulatory affairs primarily helps organizations: A ignore rules; B navigate requirements and maintain compliance; C replace clinical research; D market without evidence. | Answer: B"
+    },
+    {
+      "title": "Drug Development Pathway",
+      "lesson": "Drug development progresses through discovery and preclinical work, clinical development, regulatory review and post-market monitoring. Evidence builds progressively: laboratory and nonclinical work informs human studies, while clinical studies generate evidence on safety and effectiveness. Authorities evaluate the overall benefit-risk profile and quality information for the proposed use.",
+      "objectives": "Describe the broad development pathway; explain benefit-risk evidence; identify regulatory interactions.",
+      "activity": "Create a five-stage flowchart and write one regulatory question at each stage.",
+      "quiz": "Regulatory review considers: A packaging color only; B evidence relevant to quality, safety and efficacy; C social-media popularity; D price alone. | Answer: B"
+    },
+    {
+      "title": "Dossier Basics",
+      "lesson": "A regulatory dossier organizes evidence for health-authority review. Common structures group administrative information, summaries, quality information, nonclinical evidence and clinical evidence. The exact format varies by jurisdiction. Consistency between source data, summaries, reports and labeling is important, and documents require controlled versions and traceability.",
+      "objectives": "Explain why dossiers are organized; identify major evidence sections; understand traceability.",
+      "activity": "Sketch five dossier sections and give one example document for each.",
+      "quiz": "A dossier is best described as: A a random folder; B an organized regulatory evidence package; C a sales brochure; D a patient diary. | Answer: B"
+    },
+    {
+      "title": "Labeling & Compliance",
+      "lesson": "Product labeling communicates approved information such as indications, dosing, warnings, contraindications and other use conditions. Safety or regulatory information may require labeling changes. Because incorrect or outdated information can affect patient decisions, labeling is controlled through review, approval and version management.",
+      "objectives": "Identify the purpose of labeling; explain controlled changes; connect safety evidence with labeling.",
+      "activity": "Review a fictional warning statement and list three items that should be checked before approval.",
+      "quiz": "Why is labeling controlled? A it is purely promotional; B it communicates approved product information; C it never changes; D it replaces safety monitoring. | Answer: B"
+    },
+    {
+      "title": "Submission Lifecycle & Compliance",
+      "lesson": "Regulatory work continues after a submission is filed. Teams may receive authority questions, prepare responses, track commitments and manage approved changes. A controlled lifecycle includes planning, document readiness, submission, review, responses, approval and post-approval maintenance. Good records show what was submitted, when, and under whose control.",
+      "objectives": "Describe the submission lifecycle; explain response and commitment tracking; recognize audit readiness.",
+      "activity": "Create a submission tracker with document, owner, version, status and due-date columns.",
+      "quiz": "A submission tracker helps teams: A lose deadlines; B control documents and responsibilities; C replace regulations; D avoid review. | Answer: B"
+    }
+  ],
+  "Hospital Administration": [
+    {
+      "title": "Hospital Operations",
+      "lesson": "Hospitals combine clinical departments such as medicine, surgery, nursing, pharmacy, laboratory and imaging with support services such as procurement, finance, housekeeping and information technology. Administration coordinates people, facilities, supplies, information and schedules. Patient flow can include registration, assessment, treatment, admission and discharge, with coordination needed at each transition.",
+      "objectives": "Identify clinical and support departments; explain patient flow; recognize coordination needs.",
+      "activity": "Map a patient's journey from registration to discharge and identify three possible delay points.",
+      "quiz": "Hospital administration is mainly about: A one department; B coordinating people, processes and resources; C eliminating documentation; D replacing clinicians. | Answer: B"
+    },
+    {
+      "title": "Patient Services",
+      "lesson": "Patient services may include registration, appointment scheduling, admissions, billing coordination, help desks and discharge support. Staff should communicate clearly, protect personal information and direct clinical questions to appropriate professionals. Waiting time, complaints, appointment delays and feedback can be used as indicators for service improvement.",
+      "objectives": "Describe registration and scheduling; explain privacy and communication; identify simple service measures.",
+      "activity": "Design a five-step checklist for a patient registration desk.",
+      "quiz": "A patient service process should prioritize: A privacy and clear communication; B unnecessary delays; C public records; D confusing instructions. | Answer: A"
+    },
+    {
+      "title": "Quality Management",
+      "lesson": "Healthcare quality improvement aims to make services safer, more effective, timely, efficient and patient-centered. A simple improvement cycle is Plan-Do-Study-Act: define a problem, test a change, study the result and decide what to do next. Measures should be chosen carefully so teams can tell whether a change produced improvement.",
+      "objectives": "Define quality improvement; distinguish process and outcome measures; explain PDSA.",
+      "activity": "Use PDSA to address a fictional problem of long outpatient waiting times.",
+      "quiz": "PDSA stands for: A Plan-Do-Study-Act; B Prepare-Document-Sell-Approve; C Patient-Drug-Safety-Administration; D none. | Answer: A"
+    },
+    {
+      "title": "Documentation & Records",
+      "lesson": "Healthcare organizations rely on records for continuity, accountability, billing, quality improvement and legal or regulatory requirements. Good documentation is timely, accurate, complete and attributable, with access limited to authorized roles. Retention periods and privacy requirements vary, so organizations should follow applicable laws and internal policies.",
+      "objectives": "Identify common administrative records; explain completeness and confidentiality; recognize access and retention controls.",
+      "activity": "Create a five-item record-quality checklist including date, author, completeness and access control.",
+      "quiz": "Good records should be: A inaccurate but fast; B complete, accurate and protected; C public; D undocumented. | Answer: B"
+    },
+    {
+      "title": "Healthcare Management",
+      "lesson": "Healthcare managers balance patient needs, staffing, budgets, supplies, facilities, technology and quality. Useful KPIs can include waiting time, occupancy, turnaround time, stock-outs, complaints and utilization. Risk management involves identifying hazards, assessing impact and applying controls. Good management combines data with communication and awareness of patient and staff needs.",
+      "objectives": "Explain resource planning; identify operational risks; use basic KPIs.",
+      "activity": "Choose three KPIs for an outpatient department and explain what each tells a manager.",
+      "quiz": "A KPI is mainly used to: A measure performance against an objective; B replace all judgment; C hide problems; D create random data. | Answer: A"
+    }
+  ],
+  "AI in Healthcare": [
+    {
+      "title": "AI Fundamentals",
+      "lesson": "Artificial intelligence is a broad field involving systems that perform tasks associated with human intelligence. Machine learning learns patterns from data, while deep learning uses multi-layer neural networks. Supervised learning uses labeled examples; unsupervised methods look for structure without target labels. A model can perform well on training data and poorly on new data, so evaluation is essential.",
+      "objectives": "Differentiate AI, machine learning and deep learning; explain training data; recognize evaluation needs.",
+      "activity": "Give one healthcare supervised-learning example and identify its input and target label.",
+      "quiz": "Machine-learning models should be evaluated on: A training data only; B appropriate unseen or validation data; C social-media likes; D no data. | Answer: B"
+    },
+    {
+      "title": "Healthcare Use Cases",
+      "lesson": "Healthcare AI can support image analysis, documentation, triage, forecasting, scheduling, coding, research and patient education. Many practical systems are assistive rather than autonomous: they provide a prediction, summary or recommendation for a person to review. A safe deployment question is not only whether a model predicts accurately, but whether it improves the intended workflow for the intended population.",
+      "objectives": "Identify healthcare AI use cases; distinguish assistive from autonomous tools; recognize workflow validation.",
+      "activity": "Choose one hospital workflow and propose an AI-assisted step plus one human-review step.",
+      "quiz": "A safe AI workflow often includes: A appropriate human oversight; B no validation; C automatic treatment for everyone; D no monitoring. | Answer: A"
+    },
+    {
+      "title": "Clinical Decision Support",
+      "lesson": "Clinical decision-support systems can present risk scores, reminders, summaries or potential options. AI-based support should be validated for its intended setting and population. False positives can create alert fatigue, while false negatives can miss important cases. Interfaces should communicate uncertainty and evidence clearly, and clinicians need appropriate control over decisions.",
+      "objectives": "Explain clinical decision support; identify alert fatigue; recognize validation and monitoring.",
+      "activity": "Design a simple medication-safety alert and identify one way to reduce unnecessary alerts.",
+      "quiz": "Clinical AI should generally: A replace clinicians; B support appropriate clinical judgment with validated evidence; C hide uncertainty; D operate without monitoring. | Answer: B"
+    },
+    {
+      "title": "Medical Data",
+      "lesson": "Healthcare data can include structured fields, laboratory values, images, notes, signals and claims. AI performance depends on data quality and representativeness. Missing data, inconsistent coding and selection bias can affect results. Sensitive health information requires appropriate privacy, security, access control and governance. De-identification can reduce risk but should not be treated as a universal guarantee.",
+      "objectives": "Identify structured and unstructured data; explain missingness and bias; recognize privacy controls.",
+      "activity": "List four data-quality checks for a dataset intended to predict hospital readmission.",
+      "quiz": "Why does representative data matter? A models can behave differently across populations; B it never matters; C it removes validation; D it guarantees fairness. | Answer: A"
+    },
+    {
+      "title": "Responsible AI",
+      "lesson": "Responsible healthcare AI includes safety, effectiveness, privacy, security, fairness, transparency and accountability. A model may change in real-world performance because populations, workflows and data change. Monitoring, incident reporting, version control and clear ownership are therefore important. Higher-risk decisions require stronger validation and appropriate human oversight.",
+      "objectives": "Explain transparency, fairness and accountability; recognize model drift; identify when escalation is needed.",
+      "activity": "Create a five-item responsible-AI checklist for a hospital before deployment.",
+      "quiz": "Responsible AI requires: A deployment once with no monitoring; B governance, validation and ongoing oversight; C hidden limitations; D ignoring affected users. | Answer: B"
+    }
+  ]
+};
