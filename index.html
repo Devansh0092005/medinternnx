@@ -1,9 +1,45 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MedInternX — Learn. Intern. Grow.</title><link rel="stylesheet" href="style.css"></head><body>
-<header><a class="brand" href="#home"><b>M</b><span>MedInternX<small>Learn. Intern. Grow.</small></span></a><nav><a href="#internships">Internships</a><a href="#how">How it works</a><a href="#dashboard">Dashboard</a></nav><button onclick="openBox('login')">Student Login</button></header>
-<section id="home" class="hero"><div><label>FOR PHARMA & HEALTHCARE STUDENTS</label><h1>Build your healthcare career <em>— for free.</em></h1><p>Learn practical skills, complete internship projects and build career confidence without expensive courses.</p><p><button class="primary" onclick="document.querySelector('#internships').scrollIntoView()">Explore internships</button> <button class="soft" onclick="openBox('register')">Create free account</button></p><small>✓ Free to learn &nbsp; ✓ Beginner friendly &nbsp; ✓ Healthcare focused</small></div><div class="dashcard"><small>STUDENT DASHBOARD</small><h2>Clinical Research</h2><strong>75%</strong> <span>3 of 4 modules</span><div class="bar"><i></i></div><p>✓ Introduction to Clinical Trials</p><p>✓ GCP Fundamentals</p><p>✓ Study Documentation</p><p>○ Final Assessment</p><small>4 week learning track</small></div></section>
-<section id="internships"><label>CHOOSE YOUR PATH</label><h2>Free internship tracks</h2><div id="courses" class="grid"></div></section>
-<section id="how" class="alt"><div class="center"><label>SIMPLE & PRACTICAL</label><h2>Learn. Intern. Grow.</h2></div><div class="steps"><article><b>01</b><h3>Create your account</h3><p>Register for free and choose an internship.</p></article><article><b>02</b><h3>Learn & complete modules</h3><p>Work through practical lessons and assessments.</p></article><article><b>03</b><h3>Finish & unlock certificate</h3><p>Certificate options appear only after successful completion.</p></article></div></section>
-<section id="dashboard"><label>STUDENT SPACE</label><h2>A dashboard built for progress</h2><div class="dashboard"><aside><div class="avatar">AS</div><b>Student</b><small>Pharma & Healthcare</small><span>My internship</span><span>Learning</span><span>Certificate</span></aside><main><label>YOUR LEARNING</label><h2>Keep going — you're making progress.</h2><div class="stats"><div><small>Progress</small><b>75%</b></div><div><small>Modules done</small><b>3/4</b></div><div><small>Duration</small><b>4 weeks</b></div></div><div class="lesson"><b>Final Assessment</b><button class="primary" onclick="openBox('login')">Continue</button></div><p class="lock">🔒 Certificate options unlock after successful completion.</p></main></div></section>
-<section class="cta"><div><label>START TODAY</label><h2>Your career journey starts here.</h2><p>Practical healthcare learning, designed for students.</p></div><button class="primary" onclick="openBox('register')">Join MedInternX — Free</button></section>
-<footer><b>MedInternX</b><span>Practical healthcare learning without the high cost.</span><span>© 2026</span></footer>
-<div id="modal" class="modal"><div class="box"><button class="x" onclick="closeBox()">×</button><div id="content"></div></div></div><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MedInternX — Student Portal</title>
+<meta name="description" content="Free Pharma and Healthcare internships and courses.">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<header class="topbar"><div class="wrap nav">
+<a class="brand" href="#"><span class="logo">M</span><span>MedInternX<small>Learn. Intern. Grow.</small></span></a>
+<nav><a href="#courses">Courses</a><a href="#dashboard">Dashboard</a><button id="navLogin" class="btn btn-outline">Login</button><button id="navRegister" class="btn">Register</button><button id="navLogout" class="btn btn-outline hidden">Logout</button></nav>
+</div></header>
+
+<section class="hero"><div class="wrap hero-grid"><div>
+<span class="pill">FREE PHARMA & HEALTHCARE LEARNING</span>
+<h1>Build your healthcare career — <span>for free.</span></h1>
+<p>Register, choose an internship, unlock its modules, track your progress and complete your learning journey online.</p>
+<div class="actions"><button class="btn btn-lg" id="heroRegister">Start Learning Free</button><a class="btn btn-lg btn-light" href="#courses">Explore Courses</a></div>
+<div class="trust"><span>✓ Real student accounts</span><span>✓ Course enrollment</span><span>✓ Progress saved</span></div>
+</div><div class="hero-card"><b>Your learning path</b><div class="path">01 — Register</div><div class="path">02 — Choose an internship</div><div class="path">03 — Complete modules</div><div class="path">04 — Finish & unlock certificate options</div></div></div></section>
+
+<section id="courses" class="section"><div class="wrap">
+<div class="section-head"><div><span class="eyebrow">COURSES & INTERNSHIPS</span><h2>Choose your track</h2><p>All courses are free to join.</p></div><input id="search" class="search" placeholder="Search courses..."></div>
+<div id="courseGrid" class="grid"></div>
+</div></section>
+
+<section id="dashboard" class="section alt"><div class="wrap">
+<div class="section-head"><div><span class="eyebrow">STUDENT DASHBOARD</span><h2 id="dashTitle">Login to see your dashboard</h2><p id="dashSub">Your enrolled internship and saved progress will appear here.</p></div></div>
+<div id="dashboardContent" class="dashboard-card"><div class="empty">Please register or login to access your student dashboard.</div></div>
+</div></section>
+
+<section class="section"><div class="wrap steps"><div><b>1</b><h3>Register</h3><p>Create your real student account.</p></div><div><b>2</b><h3>Enroll</h3><p>Choose one of the free internship tracks.</p></div><div><b>3</b><h3>Learn</h3><p>Open modules and mark completed lessons.</p></div><div><b>4</b><h3>Complete</h3><p>Reach 100% completion and unlock the next step.</p></div></div></section>
+
+<footer><div class="wrap foot"><div><b>MedInternX</b><p>Learn. Intern. Grow.</p></div><p>Internships and courses are free. Any e-certificate fee is shown only after successful completion.</p></div></footer>
+
+<div id="authModal" class="modal"><div class="modal-box"><button class="x" onclick="closeModal('authModal')">×</button><div class="tabs"><button id="tabRegister">Register</button><button id="tabLogin">Login</button></div>
+<form id="registerForm"><h2>Create your student account</h2><input id="regName" required placeholder="Full name"><input id="regEmail" type="email" required placeholder="Email"><input id="regPassword" type="password" minlength="6" required placeholder="Password (6+ characters)"><button class="btn full">Create account</button><p id="regMsg" class="msg"></p></form>
+<form id="loginForm" class="hidden"><h2>Student login</h2><input id="loginEmail" type="email" required placeholder="Email"><input id="loginPassword" type="password" required placeholder="Password"><button class="btn full">Login</button><p id="loginMsg" class="msg"></p></form>
+</div></div>
+
+<div id="courseModal" class="modal"><div class="modal-box wide"><button class="x" onclick="closeModal('courseModal')">×</button><div id="courseDetails"></div></div></div>
+<script src="config.js"></script><script src="script.js"></script>
+</body></html>
