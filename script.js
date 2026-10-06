@@ -58,7 +58,8 @@ async function openCourse(id){
 function openLesson(courseId,index){
  const c=courses.find(x=>Number(x.id)===Number(courseId)); if(!c)return;
  const m=moduleContent(c.name,index,c);
- document.getElementById("lessonDetails").innerHTML=`<span class="eyebrow">${c.icon} ${c.name}</span><h2>Module ${index+1}: ${m.title}</h2><div class="lesson-section"><h3>📖 Lesson</h3><p>${m.lesson}</p></div><div class="lesson-section"><h3>🎯 Learning objectives</h3><ul>${(m.objectives||[]).map(x=>`<li>${x}</li>`).join("")}</ul></div><div class="lesson-section"><h3>💡 Practical task</h3><p>${m.activity}</p></div><div class="lesson-section quiz"><h3>📝 Knowledge check</h3><p>${m.quiz}</p></div><button class="btn" onclick="closeModal('lessonModal');${user?`openCourse(${c.id})`:`openAuth('register')`}">Back to course</button>`;
+ const objectives=Array.isArray(m.objectives)?m.objectives:(m.objectives?[m.objectives]:[]);
+ document.getElementById("lessonDetails").innerHTML=`<span class="eyebrow">${c.icon} ${c.name}</span><h2>Module ${index+1}: ${m.title}</h2><div class="lesson-section"><h3>📖 Lesson</h3><p>${m.lesson||"Lesson material will appear here."}</p></div><div class="lesson-section"><h3>🎯 Learning objectives</h3><ul>${objectives.map(x=>`<li>${x}</li>`).join("")}</ul></div><div class="lesson-section"><h3>💡 Practical task</h3><p>${m.activity||"Complete the practical activity for this module."}</p></div><div class="lesson-section quiz"><h3>📝 Knowledge check</h3><p>${m.quiz||"Review the lesson and test your understanding."}</p></div><button class="btn" onclick="closeModal('lessonModal');${user?`openCourse(${c.id})`:`openAuth('register')`}">Back to course</button>`;
  closeModal("courseModal"); openModal("lessonModal");
 }
 async function enroll(courseId){
